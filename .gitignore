@@ -3,3 +3,4 @@ bundle.js
 .env
 *.log
 *.map
+build/

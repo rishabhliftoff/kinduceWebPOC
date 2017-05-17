@@ -1,5 +1,5 @@
 {
-  "name": "liftoff react starter kit",
+  "name": "liftoff_react_starter_kit",
   "version": "1.0.0",
   "description": "Starter kit for react apps",
   "main": "index.js",
@@ -15,9 +15,6 @@
     "start": "babel-node server.js",
     "postinstall": "webpack --config ./webpack.production.config.js"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LiftOffLLC/boot-reactweb.git"
@@ -69,6 +66,7 @@
     "newrelic": "^1.36.1",
     "node-sass": "4.1.1",
     "pre-commit": "1.2.2",
+    "prop-types": "15.5.10",
     "qs": "^6.4.0",
     "react": "15.4.2",
     "react-async-component": "^1.0.0-beta.3",

@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-require('newrelic');
 import React from 'react';
 import { renderToString, extractModules } from 'react-router-server';
 import { ServerRouter, createServerRenderContext } from 'react-router';

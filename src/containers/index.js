@@ -1,12 +1,12 @@
 import { asyncComponent } from 'react-async-component';
-// import RootContainer from './RootContainer';
-// import RequiresAuth from './RequiresAuth';
+import RootContainer from './RootContainer';
+import AppContainer from './AppContainer';
 
 // const Header = asyncComponent({ resolve: () => System.import('./Header') });
 
 
 export {
-  // RootContainer,
-  // RequiresAuth,
+  RootContainer,
+  AppContainer,
   // Header,
 };
