@@ -20,12 +20,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Wishberry/wb4portal.git"
+    "url": "git+https://github.com/LiftOffLLC/boot-reactweb.git"
   },
   "author": "ManjunathaN",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Wishberry/wb4portal/issues"
+    "url": "https://github.com/Wishberry/boot-reactweb/issues"
   },
   "dependencies": {
     "assets-webpack-plugin": "3.5.1",

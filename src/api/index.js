@@ -7,7 +7,7 @@ const baseUri = `${appUri}/api`;
 const proxyOptions = {
   headers: {
     Accept: 'application/json',
-    'Content-Type': 'application/vnd.wishberry.v1+json',
+    'Content-Type': 'application/json',
   },
 };
 

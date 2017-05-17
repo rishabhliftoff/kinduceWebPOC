@@ -5,8 +5,8 @@
  * description of configuration variables and their potential values.
  */
 const newrelicConfig = {
-  name: `Triber v4.0 Portal -  ${process.env.NODE_ENV}`,
-  key: process.env.NEW_RELIC_LICENSE_KEY || 'f3408bfa6ee493e720ab71fc3c1150fe7037ea4f',
+  name: `LiftOff React Starter Kit -  ${process.env.NODE_ENV}`,
+  key: process.env.NEW_RELIC_LICENSE_KEY || '',
   log_level: process.env.NEW_RELIC_LOG_LEVEL || 'info',
 };
 
