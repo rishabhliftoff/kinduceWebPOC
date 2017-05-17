@@ -1,0 +1,32 @@
+<!doctype html>
+<html amp  <%- head.htmlAttributes.toString() %>   >
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Example.in</title>
+    <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
+    <link rel="canonical" href="<%- currentUrl %>" />
+    <%- head.title.toString() %>
+    <%- head.meta.toString() %>
+    <%- head.link.toString() %>
+
+    <% jsAssets.forEach(function (file) { %>
+    <link rel="preload" href="<%- file %>" as="script">
+    <% }); %>
+    <% cssAssets.forEach(function (file) { %>
+    <link rel="stylesheet" href="<%- file %>">
+    <% }); %>
+  </head>
+  <body>
+
+    <div id="root"><% if (typeof(html) !== 'undefined') { %><%- html %><% } %></div>
+
+    <script>
+      window.__INITIAL_STATE__ = <% if (typeof(initialState) !== 'undefined' && initialState) { %><%- JSON.stringify(initialState) %><% } else { %>null<% } %>;
+      window.__INITIAL_MODULES__ = <% if (typeof(modules) !== 'undefined' && modules) { %><%- JSON.stringify(modules) %><% } else { %>null<% } %>;
+    </script>
+    <% jsAssets.forEach(function (file) { %>
+    <script src="<%- file %>"></script>
+    <% }); %>
+  </body>
+</html>

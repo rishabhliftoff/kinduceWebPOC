@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: https://stage.triber.in/sitemap.xml

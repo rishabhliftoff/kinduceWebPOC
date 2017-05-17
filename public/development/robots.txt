@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: http://qa.triber.in/sitemap.xml
