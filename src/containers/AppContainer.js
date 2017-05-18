@@ -8,6 +8,7 @@ import {
 } from '../components';
 
 import Notification from './NotificationContainer';
+import GeoLocation from './geoLocationContainer';
 
 @fetchState(
   () => ({}),
@@ -27,10 +28,13 @@ class AppContainer extends Component {
   render() {
     // here routers will come
     return (
-      <Header>
-        Kinduce
-        <Notification />
-      </Header>
+      <div>
+        <Header>
+          Kinduce
+          <Notification />
+        </Header>
+        <GeoLocation />
+      </div>
     );
   }
 }

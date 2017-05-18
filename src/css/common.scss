@@ -69,3 +69,23 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.btn {
+  padding: 10px 20px;
+  background: #FFB74D;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.info {
+  padding: 20px;
+  border: #009688;
+  border-radius: 5px;
+}
+
+.geoLocation__container {
+  padding: 30px;
+  text-align: center;
+}
