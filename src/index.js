@@ -9,6 +9,10 @@ import { preload, ServerStateProvider } from 'react-router-server';
 import configureStore from './store';
 import { RootContainer } from './containers';
 
+import './css/common.scss';
+import './css/font-awesome-4.7.0/css/font-awesome.min.css';
+
+
 const rootEl = document.getElementById('root');
 preload(window.__INITIAL_MODULES__).then(() => {
   const initialState = fromJS(window.__INITIAL_STATE__[1])

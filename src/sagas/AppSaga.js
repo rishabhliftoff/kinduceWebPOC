@@ -24,5 +24,5 @@ function* pingServer() {
 }
 
 export default function* () {
-  yield fork(pingServer);
+  // yield fork(pingServer);
 }

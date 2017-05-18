@@ -77,11 +77,12 @@ app.get('/sitemap.xml', (req, res) => {
 
 app.get('*', (req, res, next) => {
   const context = createServerRenderContext();
-  const { userId, authToken } = req.session;
-  let initialState = fromJS({ app: { userAgent: req.headers['user-agent'], currencyMultiplier: 1, currencySymbol: '₹' } });
-  if (authToken && userId) {
-    initialState = fromJS({ app: { userAgent: req.headers['user-agent'], loggedIn: true, userId, authToken, currencyMultiplier: 1, currencySymbol: '₹' } });
-  }
+  // const { userId, authToken } = req.session;
+  let initialState = fromJS({
+    notification: {
+      notifications: []
+    }
+  });
   const store = configureStore(initialState);
   const server = (
     <ServerRouter location={req.url} context={context}>
@@ -101,7 +102,7 @@ app.get('*', (req, res, next) => {
         if(assets.vendor){
           jsAssets.unshift(assets.vendor.js);
         }
-        console.log(req.url);
+        console.log(state);
         res.render(
           path.join(__dirname, 'index.ejs'), {
             html,

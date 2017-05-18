@@ -1,6 +1,6 @@
-//App actions
-const APP_DEFAULT_ACTION = 'APP_DEFAULT_ACTION';
+//Notification actions
+const NOTIFICATION_UPDATE = 'NOTIFICATION_UPDATE';
 
 export default {
-  APP_DEFAULT_ACTION,
+  NOTIFICATION_UPDATE
 };

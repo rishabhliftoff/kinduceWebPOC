@@ -1,7 +1,13 @@
 import { asyncComponent } from 'react-async-component';
 
-// const ProjectPreviewButton = asyncComponent({ resolve: () => System.import('./ProjectPreviewButton') });
+const Notification = asyncComponent({ resolve: () => System.import('./notification') });
+const NotificationList = asyncComponent({ resolve: () => System.import('./notificationList') });
+const Header = asyncComponent({ resolve: () => System.import('./header') });
+const HeaderRightSection = asyncComponent({ resolve: () => System.import('./headerRightSection') });
 
 export {
-  // ProjectPreviewButton,
+  Notification,
+  NotificationList,
+  Header,
+  HeaderRightSection,
 };

@@ -1,5 +1,5 @@
-import * as AppActions from './AppActions';
+import * as NotificationActions from './NotificationActions';
 
 export {
-  AppActions,
+  NotificationActions,
 };
