@@ -1,7 +1,7 @@
 {
-  "name": "liftoff_react_starter_kit",
+  "name": "kinduce",
   "version": "1.0.0",
-  "description": "Starter kit for react apps",
+  "description": "kinduce mobile web app POC",
   "main": "index.js",
   "engines": {
     "node": "6.9.1",
@@ -13,13 +13,14 @@
     "webpack-dev": "npm run clean && webpack --config webpack.config.js --watch",
     "dev": " npm run clean  && concurrently --kill-others \"npm run webpack-dev\"  \"nodemon index.js\" ",
     "start": "babel-node server.js",
-    "postinstall": "webpack --config ./webpack.production.config.js"
+    "postinstall": "webpack --config ./webpack.production.config.js",
+    "heroku-postbuild": "webpack -p --config ./webpack.production.config.js --progress"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LiftOffLLC/boot-reactweb.git"
   },
-  "author": "Praveen S",
+  "author": "Rishabh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Wishberry/boot-reactweb/issues"
