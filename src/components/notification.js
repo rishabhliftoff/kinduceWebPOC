@@ -5,7 +5,7 @@ const Notification = (props) => {
     <div className="notification__bell-container">
       <i className="fa fa-bell" aria-hidden="true"></i>
       {
-        props.notificationCount &&
+        props.notificationCount > 0 &&
         <div className="notification__count">
           {props.notificationCount}
         </div>

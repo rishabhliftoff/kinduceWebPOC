@@ -19,9 +19,9 @@ import GeoLocation from './geoLocationContainer';
 class AppContainer extends Component {
 
   componentWillMount() {
-    const { notifications } = this.props;
+    const { notification } = this.props;
     this.props.done({
-      notification: { notifications },
+      notification,
     });
   }
 
@@ -41,7 +41,7 @@ class AppContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    notifications: state.getIn(['notification','notifications'])
+    notification: state.notification
   }
 }
 

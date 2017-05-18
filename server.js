@@ -102,7 +102,6 @@ app.get('*', (req, res, next) => {
         if(assets.vendor){
           jsAssets.unshift(assets.vendor.js);
         }
-        console.log(state);
         res.render(
           path.join(__dirname, 'index.ejs'), {
             html,
@@ -121,3 +120,28 @@ app.get('*', (req, res, next) => {
 app.listen(process.env.PORT || port, () => {
   console.log('Serving now...');
 });
+
+var Pusher = require('pusher');
+
+var pusher = new Pusher({
+  appId: '341108',
+  key: '4c6aba2e7cad38b7215c',
+  secret: '0443b24a05a9741cd8a6',
+  cluster: 'ap2',
+  encrypted: true
+});
+
+setInterval(() => {
+    pusher.trigger('my-channel', 'notification', {
+      "newNotifications" : [
+        {
+          "id": Math.floor(Math.random()*1000000),
+          "isRead": false,
+          "name": "abs",
+          "message": "lorem ipsums smfkshfk iusfhkejn skfsfkjle"
+        }
+      ]
+    })
+  },
+  6000
+);

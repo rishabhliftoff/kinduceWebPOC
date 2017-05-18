@@ -1,10 +1,17 @@
 import {
   NOTIFICATION_UPDATE,
+  NOTIFICATION_CLEAR,
 } from './actionTypes';
 
-export function notificationChange(notifications) {
+export function notificationUpdate(newNotifications) {
   return {
     type: NOTIFICATION_UPDATE,
-    notifications,
+    newNotifications,
+  };
+}
+
+export function notificationClear() {
+  return {
+    type: NOTIFICATION_CLEAR,
   };
 }

@@ -1,17 +1,28 @@
-import { Map, fromJS } from 'immutable';
+import { Map, fromJS, List } from 'immutable';
 import {
   NOTIFICATION_UPDATE,
+  NOTIFICATION_CLEAR,
 } from '../actions/actionTypes';
 
-const initialState = Map({
-  notifications: []
-});
+const initialState = List();
 
-export default function notificationReducer(state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case NOTIFICATION_UPDATE:
-      state = state.set('notifications', action.notifications);
+      action.newNotifications.forEach((notification) => {
+        state = state.push(
+          Map({
+            id: notification.id,
+            name: notification.name,
+            message: notification.message,
+          })
+        )
+      });
       return state;
+
+    case NOTIFICATION_CLEAR:
+      return initialState;
+
     default:
       return state;
   }
