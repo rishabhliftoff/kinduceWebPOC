@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { GeoLocation } from '../components';
 
 class geoLocationContainer extends Component {
   constructor(props) {
@@ -33,20 +34,12 @@ class geoLocationContainer extends Component {
 
   render() {
     return (
-      <div className="geoLocation__container" >
-        {
-          this.state.latitude && this.state.longitude &&
-          <div className="info">
-            Latitude: {this.state.latitude}
-            <br />
-            Longitude: {this.state.longitude}
-          </div>
-        }
-        <button className="btn" onClick={this.getUserCurrentLocation}>
-          Get Current Location
-        </button>
-        {this.state.error && <div>this.state.error</div>}
-      </div>
+      <GeoLocation
+        latitude={this.state.latitude}
+        longitude={this.state.longitude}
+        error={this.state.error}
+        getUserCurrentLocation={this.getUserCurrentLocation}
+      />
     );
   }
 }
