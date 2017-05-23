@@ -76,6 +76,15 @@ app.get('/sitemap.xml', (req, res) => {
 });
 
 app.get('*', (req, res, next) => {
+  if (req.headers['x-forwarded-proto'] !== 'https') {
+    res.redirect(`https://kinduce.herokuapp.com${req.url}`);
+  }
+  else {
+    next(); /* Continue to other routes if we're not redirecting */
+  }
+});
+
+app.get('*', (req, res, next) => {
   const context = createServerRenderContext();
   // const { userId, authToken } = req.session;
   let initialState = fromJS({
