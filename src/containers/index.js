@@ -8,6 +8,6 @@ const Notification = asyncComponent({ resolve: () => System.import('./Notificati
 export {
   RootContainer,
   AppContainer,
-  Notification
+  Notification,
   // Header,
 };

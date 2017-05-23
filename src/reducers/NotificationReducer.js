@@ -1,4 +1,4 @@
-import { Map, fromJS, List } from 'immutable';
+import { Map, List } from 'immutable';
 import {
   NOTIFICATION_UPDATE,
   NOTIFICATION_CLEAR,
@@ -15,8 +15,8 @@ export default (state = initialState, action) => {
             id: notification.id,
             name: notification.name,
             message: notification.message,
-          })
-        )
+          }),
+        );
       });
       return state;
 
@@ -26,4 +26,4 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
-}
+};

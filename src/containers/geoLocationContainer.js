@@ -7,38 +7,38 @@ class geoLocationContainer extends Component {
     this.state = {
       latitude: null,
       longitude: null,
-      error: null
-    }
+      error: null,
+    };
 
     this.getUserCurrentLocation = this.getUserCurrentLocation.bind(this);
   }
 
   getUserCurrentLocation() {
-    if ("geolocation" in window.navigator) {
+    if ('geolocation' in window.navigator) {
       window.navigator.geolocation.getCurrentPosition((position) => {
-        const {latitude, longitude} = position.coords;
+        const { latitude, longitude } = position.coords;
         this.setState({
           latitude,
           longitude,
-          error: null
+          error: null,
         });
       });
     } else {
       this.setState({
         latitude: null,
         longitude: null,
-        error: 'unable to get geolocation'
-      })
+        error: 'unable to get geolocation',
+      });
     }
   }
 
   render() {
     return (
       <GeoLocation
-        latitude={this.state.latitude}
-        longitude={this.state.longitude}
-        error={this.state.error}
-        getUserCurrentLocation={this.getUserCurrentLocation}
+          latitude={this.state.latitude}
+          longitude={this.state.longitude}
+          error={this.state.error}
+          getUserCurrentLocation={this.getUserCurrentLocation}
       />
     );
   }

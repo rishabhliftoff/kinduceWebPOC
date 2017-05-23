@@ -1,0 +1,14 @@
+
+/Users/user/Projects/kinduce/src/actions/index.js
+  4:3  error  Prefer default export  import/prefer-default-export
+
+/Users/user/Projects/kinduce/src/containers/NotificationContainer.js
+  20:5   error  'Pusher' is not defined  no-undef
+  22:24  error  'Pusher' is not defined  no-undef
+  48:21  error  Do not use findDOMNode   react/no-find-dom-node
+
+/Users/user/Projects/kinduce/src/screens/index.js
+  4:3  error  Prefer default export  import/prefer-default-export
+
+✖ 5 problems (5 errors, 0 warnings)
+

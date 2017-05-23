@@ -9,41 +9,31 @@ class NotificationContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showNotificationList: false
-    }
+      showNotificationList: false,
+    };
+
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.onNotificationClick = this.onNotificationClick.bind(this);
   }
   componentWillMount() {
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
 
-    var pusher = new Pusher('4c6aba2e7cad38b7215c', {
+    const pusher = new Pusher('4c6aba2e7cad38b7215c', {
       cluster: 'ap2',
-      encrypted: true
+      encrypted: true,
     });
 
-    var channel = pusher.subscribe('my-channel');
+    const channel = pusher.subscribe('my-channel');
     channel.bind('notification', (data) => {
       this.props.notificationUpdate(data.newNotifications);
     });
 
-    document.addEventListener('click', this.handleClickOutside.bind(this), true);
+    document.addEventListener('click', this.handleClickOutside, true);
   }
 
   componentWillUnmount() {
-      document.removeEventListener('click', this.handleClickOutside.bind(this), true);
-  }
-
-  handleClickOutside(event) {
-      const domNode = ReactDOM.findDOMNode(this);
-
-      if ((!domNode || !domNode.contains(event.target))) {
-        if (this.state.showNotificationList) {
-          this.setState({
-              showNotificationList : false
-          });
-          this.props.notificationClear();
-        }
-      }
+    document.removeEventListener('click', this.handleClickOutside, true);
   }
 
   onNotificationClick() {
@@ -51,12 +41,25 @@ class NotificationContainer extends Component {
       this.props.notificationClear();
     }
 
-    this.setState({showNotificationList: !this.state.showNotificationList});
+    this.setState({ showNotificationList: !this.state.showNotificationList });
+  }
+
+  handleClickOutside(event) {
+    const domNode = ReactDOM.findDOMNode(this);
+
+    if ((!domNode || !domNode.contains(event.target))) {
+      if (this.state.showNotificationList) {
+        this.setState({
+          showNotificationList: false,
+        });
+        this.props.notificationClear();
+      }
+    }
   }
 
   render() {
     return (
-      <div className="notification__container" onClick={this.onNotificationClick.bind(this)}>
+      <div className="notification__container" onClick={this.onNotificationClick}>
         <Notification notificationCount={this.props.notifications.size} />
         {
           this.state.showNotificationList &&
@@ -67,10 +70,10 @@ class NotificationContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    notifications: state.get('notification')
-  }
-}
+const mapStateToProps = state =>
+   ({
+     notifications: state.get('notification'),
+   })
+;
 
-export default connect(mapStateToProps, { ...NotificationActions } )(NotificationContainer);
+export default connect(mapStateToProps, { ...NotificationActions })(NotificationContainer);

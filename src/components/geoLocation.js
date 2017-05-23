@@ -18,6 +18,6 @@ const geoLocation = (props) => {
       {error && <div>error</div>}
     </div>
   );
-}
+};
 
 export default geoLocation;

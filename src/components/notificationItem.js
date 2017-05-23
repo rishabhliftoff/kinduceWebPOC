@@ -24,7 +24,7 @@ const NotificationItem = (props) => {
     <div className="notification__item">
       {content}
     </div>
-  )
-}
+  );
+};
 
 export default NotificationItem;

@@ -1,4 +1,4 @@
-//Notification actions
+// Notification actions
 const NOTIFICATION_UPDATE = 'NOTIFICATION_UPDATE';
 const NOTIFICATION_CLEAR = 'NOTIFICATION_CLEAR';
 

@@ -4,7 +4,6 @@ import { fetchState } from 'react-router-server';
 
 import {
   Header,
-  HeaderRightSection,
 } from '../components';
 
 import Notification from './NotificationContainer';
@@ -39,10 +38,10 @@ class AppContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    notification: state.notification
-  }
-}
+const mapStateToProps = state =>
+   ({
+     notification: state.notification,
+   })
+;
 
 export default connect(mapStateToProps)(AppContainer);

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 import appendQuery from '../helpers/appendQuery';
-import { appUri, baseAPIUri } from '../config';
+import { appUri } from '../config';
 
 const baseUri = `${appUri}/api`;
 const proxyOptions = {
