@@ -5,6 +5,9 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
 
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMYDal2NfCD6lYpT5mMV3F3IznTu5nXs0&callback=initMap" async defer></script> -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMYDal2NfCD6lYpT5mMV3F3IznTu5nXs0&libraries=drawing"></script>
+
     <title>Example.in</title>
     <meta name="viewport" content="initial-scale=1,width=device-width,minimum-scale=1">
     <link rel="canonical" href="<%- currentUrl %>" />
@@ -30,5 +33,6 @@
     <% jsAssets.forEach(function (file) { %>
     <script src="<%- file %>"></script>
     <% }); %>
+    </script>
   </body>
 </html>

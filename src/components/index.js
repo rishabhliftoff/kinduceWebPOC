@@ -4,10 +4,12 @@ const Notification = asyncComponent({ resolve: () => System.import('./notificati
 const NotificationList = asyncComponent({ resolve: () => System.import('./notificationList') });
 const Header = asyncComponent({ resolve: () => System.import('./header') });
 const GeoLocation = asyncComponent({ resolve: () => System.import('./geoLocation') });
+const CreateFence = asyncComponent({ resolve: () => System.import('./createFence') });
 
 export {
   Notification,
   NotificationList,
   Header,
   GeoLocation,
+  CreateFence,
 };

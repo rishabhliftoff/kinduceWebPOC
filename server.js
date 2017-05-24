@@ -75,6 +75,59 @@ app.get('/sitemap.xml', (req, res) => {
   });
 });
 
+import inside from 'point-in-polygon';
+let areas = [];
+
+app.get('/resetLocations', (req, res, next) => {
+  areas = [];
+  res.send();
+});
+
+app.post('/setLocation', (req, res, next) => {
+  console.log('dbg setlocation: ', req.body);
+  const area = {
+    id: `area-${areas.length}`,
+  };
+  const poly = [];
+  req.body.forEach((ltln) => {
+    poly.push([ltln.lat, ltln.lng]);
+  });
+  area.polygon = poly;
+  areas.push(area);
+  res.send({ areaId: area.id });
+});
+
+app.post('/checkLocation', (req, res, next) => {
+  console.log('dbg current user location: ', req.body);
+  console.log('dbg all locations length: ', areas.length);
+  console.log('dbg all locations: ', areas);
+
+  const curLoc = [req.body.lat, req.body.lng];
+  let areaId;
+  areas.some((area) => {
+    if (inside(curLoc, area.polygon)) {
+      areaId = area.id;
+      return true;
+    }
+
+    return false;
+  });
+
+  console.log('dbg id: ', areaId);
+  if (areaId) {
+    res.send({
+      success: true,
+      areaId,
+    });
+
+    return;
+  }
+
+  res.send({
+    success: false,
+  });
+});
+
 app.get('*', (req, res, next) => {
   if (req.headers['x-forwarded-proto'] !== 'https') {
     res.redirect(`https://kinduce.herokuapp.com${req.url}`);
@@ -152,5 +205,5 @@ setInterval(() => {
     ],
   });
 },
-  6000,
+  60000,
 );

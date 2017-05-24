@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { GeoLocation } from '../components';
 import { getMobileOperatingSystem } from '../utils/userDeviceInfo';
 
-class geoLocationContainer extends Component {
+class GeoLocationContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       latitude: null,
       longitude: null,
       error: null,
+      area: null,
     };
 
     this.getUserCurrentLocation = this.getUserCurrentLocation.bind(this);
@@ -18,6 +20,26 @@ class geoLocationContainer extends Component {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         const { latitude, longitude } = position.coords;
+
+        axios.post('/checkLocation', { lat: latitude, lng: longitude })
+          .then((response) => {
+            console.log(response);
+            if (response.data.success) {
+              this.setState({
+                area: response.data.areaId,
+              });
+            } else {
+              this.setState({
+                area: 'not found',
+              });
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+            this.setState({
+              area: 'not found due to some server error',
+            });
+          });
         this.setState({
           latitude,
           longitude,
@@ -66,14 +88,22 @@ class geoLocationContainer extends Component {
 
   render() {
     return (
-      <GeoLocation
-          latitude={this.state.latitude}
-          longitude={this.state.longitude}
-          error={this.state.error}
-          getUserCurrentLocation={this.getUserCurrentLocation}
-      />
+      <div>
+        <GeoLocation
+            latitude={this.state.latitude}
+            longitude={this.state.longitude}
+            error={this.state.error}
+            getUserCurrentLocation={this.getUserCurrentLocation}
+        />
+        {
+          this.state.area &&
+          <div className="info">
+            the area is {this.state.area}
+          </div>
+        }
+      </div>
     );
   }
 }
 
-export default geoLocationContainer;
+export default GeoLocationContainer;

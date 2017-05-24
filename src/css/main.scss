@@ -51,12 +51,21 @@ $red: red;
 $error: #D8000C;
 $error-lighten: lighten($error, 50%);
 
+$info: #87CEFA;
+$info-lighten: lighten($info, 50%);
+
 body {
   background: $primary-color-50;
   font-family: Roboto, serif;
+}
+
+.main {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 @import 'common';
 @import 'header';
 @import 'notification';
 @import 'geoLocation';
+@import 'createFence';

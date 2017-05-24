@@ -6,14 +6,14 @@ const geoLocation = (props) => {
     <div className="geoLocation__container" >
       {
         latitude && longitude &&
-        <div className="info">
+        <div className="geoLocation__info">
           Latitude: {latitude}
           <br />
           Longitude: {longitude}
         </div>
       }
       <button className="btn mt10" onClick={getUserCurrentLocation}>
-        Get Current Location
+        Get Current Location and Checkin
       </button>
       {error && <div className="error">{error}</div>}
     </div>

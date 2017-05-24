@@ -8,6 +8,7 @@ import {
 
 import Notification from './NotificationContainer';
 import GeoLocation from './geoLocationContainer';
+import CreateFence from './CreateFenceContainer';
 
 @fetchState(
   () => ({}),
@@ -32,7 +33,10 @@ class AppContainer extends Component {
           Kinduce
           <Notification />
         </Header>
-        <GeoLocation />
+        <div className="main">
+          <GeoLocation />
+          <CreateFence />
+        </div>
       </div>
     );
   }

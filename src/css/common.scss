@@ -3,6 +3,10 @@
   margin-top: 10px;
 }
 
+.ml10 {
+  margin-left: 10px;
+}
+
 .btn {
   padding: 10px 20px;
   background: $secondry-color-300;
@@ -12,16 +16,18 @@
   font-size: 18px;
 }
 
-.info {
-  padding: 20px;
-  border: 1px solid $primary-color-500;
-  border-radius: 2px;
-}
-
 .error {
   border: 1px solid $error;
   padding: 5px;
   margin-top: 10px;
   color: $error;
   background-color: $error-lighten;
+}
+
+.info {
+  border: 1px solid $info;
+  padding: 5px;
+  margin-top: 10px;
+  color: $info;
+  background-color: $info-lighten;
 }

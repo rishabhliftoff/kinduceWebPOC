@@ -1,5 +1,11 @@
 
 .geoLocation__container {
-  padding: 30px;
+  padding: 30px 20px 0 20px;
   text-align: center;
+}
+
+.geoLocation__info {
+  padding: 20px;
+  border: 1px solid $primary-color-500;
+  border-radius: 2px;
 }
