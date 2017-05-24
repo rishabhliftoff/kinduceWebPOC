@@ -24,18 +24,18 @@ class geoLocationContainer extends Component {
           error: null,
         });
       }, (error) => {
-        console.log('geolocation error: ', error);
         let err;
         switch (error.code) {
-          case error.PERMISSION_DENIED:
+          case error.PERMISSION_DENIED: {
             err = 'User denied the request for Geolocation.';
             const OS = getMobileOperatingSystem();
             if (OS === 'iOS') {
-              err += ` Please allow the browser to access geolocation through Settings > Privacy > Location Services > browser`;
+              err += ' Please allow the browser to access geolocation through Settings > Privacy > Location Services > browser';
             } else {
               err += ' Please allow the browser to access geolocation through browser settings.';
             }
             break;
+          }
           case error.POSITION_UNAVAILABLE:
             err = 'Location information is unavailable.';
             break;

@@ -1,0 +1,62 @@
+
+// https://material.io/guidelines/style/color.html#color-color-palette
+// primary color: teal
+$primary-color-50: #E0F2F1;
+$primary-color-100: #B2DFDB;
+$primary-color-200: #80CBC4;
+$primary-color-300: #4DB6AC;
+$primary-color-400: #26A69A;
+$primary-color-500: #009688;
+$primary-color-600: #00897B;
+$primary-color-700: #00796B;
+$primary-color-800: #00695C;
+$primary-color-900: #004D40;
+$primary-color-A100: #A7FFEB;
+$primary-color-A200: #64FFDA;
+$primary-color-A400: #1DE9B6;
+$primary-color-A700: #00BFA5;
+
+// secondry color: orange
+$secondry-color-50: #FFF3E0;
+$secondry-color-100: #FFE0B2;
+$secondry-color-200: #FFCC80;
+$secondry-color-300: #FFB74D;
+$secondry-color-400: #FFA726;
+$secondry-color-500: #FF9800;
+$secondry-color-600: #FB8C00;
+$secondry-color-700: #F57C00;
+$secondry-color-800: #EF6C00;
+$secondry-color-900: #E65100;
+$secondry-color-A100: #FFD180;
+$secondry-color-A200: #FFAB40;
+$secondry-color-A400: #FF9100;
+$secondry-color-A700: #FF6D00;
+
+// grey
+$grey-50: #FAFAFA;
+$grey-100: #F5F5F5;
+$grey-200: #EEEEEE;
+$grey-300: #E0E0E0;
+$grey-400: #BDBDBD;
+$grey-500: #9E9E9E;
+$grey-600: #757575;
+$grey-700: #616161;
+$grey-800: #424242;
+$grey-900: #212121;
+
+$white: white;
+
+$red: red;
+
+$error: #D8000C;
+$error-lighten: lighten($error, 50%);
+
+body {
+  background: $primary-color-50;
+  font-family: Roboto, serif;
+}
+
+@import 'common';
+@import 'header';
+@import 'notification';
+@import 'geoLocation';

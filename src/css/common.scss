@@ -1,79 +1,11 @@
-body {
-  background: #E0F2F1;
-}
 
-.header__container {
-  padding: 10px;
-  background: #00796B;
-  color: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.header__right {
-  position: absolute;
-  right: 0;
-  display: inline-block;
-}
-
-.notification__container {
-  float: right;
-  display: inline-block;
-}
-
-.notification__bell-container {
-  position: relative;
-}
-
-.notification__count {
-  top: -6px;
-  right: -6px;
-  position: absolute;
-  display: inline-block;
-  border-radius: 50%;
-  background: red;
-  font-size: 10px;
-  height: 12px;
-  width: 12px;
-  text-align: center;
-  line-height: 12px;
-}
-
-.notification__list {
-  position: absolute;
-  color: cornflowerblue;
-  background: white;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-  width: 50%;
-  right: 0px;
-}
-
-.notification__item {
-  padding: 5px;
-  border-bottom: 1px solid lightgrey;
-}
-
-.notification__item:last-child {
-  border-bottom: 0;
-}
-
-.notification__item__name {
-  color: #4DB6AC;
-  text-transform: uppercase;
-  font-size: 12px;
-  border-bottom: 1px solid lightgrey;
-}
-
-.notification__item__content {
-  color: grey;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.mt10 {
+  margin-top: 10px;
 }
 
 .btn {
   padding: 10px 20px;
-  background: #FFB74D;
+  background: $secondry-color-300;
   color: white;
   border: 0;
   border-radius: 3px;
@@ -82,19 +14,14 @@ body {
 
 .info {
   padding: 20px;
-  border: #009688;
-  border-radius: 5px;
-}
-
-.geoLocation__container {
-  padding: 30px;
-  text-align: center;
+  border: 1px solid $primary-color-500;
+  border-radius: 2px;
 }
 
 .error {
-  border: 1px solid #D8000C;
+  border: 1px solid $error;
   padding: 5px;
   margin-top: 10px;
-  color: #D8000C;
-  background-color: #FFBABA;
+  color: $error;
+  background-color: $error-lighten;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const NotificationItem = (props) => {
   let content = (
-    <div>
+    <div className="error">
       {props.error || 'No Notification'}
     </div>
   );

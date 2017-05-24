@@ -2,6 +2,10 @@
 /Users/user/Projects/kinduce/src/actions/index.js
   4:3  error  Prefer default export  import/prefer-default-export
 
+/Users/user/Projects/kinduce/src/containers/geoLocationContainer.js
+  18:26  error  'navigator' is not defined  no-undef
+  19:7   error  'navigator' is not defined  no-undef
+
 /Users/user/Projects/kinduce/src/containers/NotificationContainer.js
   20:5   error  'Pusher' is not defined  no-undef
   22:24  error  'Pusher' is not defined  no-undef
@@ -10,5 +14,10 @@
 /Users/user/Projects/kinduce/src/screens/index.js
   4:3  error  Prefer default export  import/prefer-default-export
 
-✖ 5 problems (5 errors, 0 warnings)
+/Users/user/Projects/kinduce/src/utils/userDeviceInfo.js
+   3:21  error  'navigator' is not defined  no-undef
+   3:44  error  'navigator' is not defined  no-undef
+  23:3   error  Prefer default export       import/prefer-default-export
+
+✖ 10 problems (10 errors, 0 warnings)
 

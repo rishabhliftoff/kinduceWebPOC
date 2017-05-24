@@ -12,7 +12,7 @@ const geoLocation = (props) => {
           Longitude: {longitude}
         </div>
       }
-      <button className="btn" onClick={getUserCurrentLocation}>
+      <button className="btn mt10" onClick={getUserCurrentLocation}>
         Get Current Location
       </button>
       {error && <div className="error">{error}</div>}

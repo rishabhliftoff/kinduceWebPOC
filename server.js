@@ -141,16 +141,16 @@ var pusher = new Pusher({
 });
 
 setInterval(() => {
-    pusher.trigger('my-channel', 'notification', {
-      "newNotifications" : [
-        {
-          "id": Math.floor(Math.random()*1000000),
-          "isRead": false,
-          "name": "abs",
-          "message": "lorem ipsums smfkshfk iusfhkejn skfsfkjle"
-        }
-      ]
-    })
-  },
-  6000
+  pusher.trigger('my-channel', 'notification', {
+    newNotifications: [
+      {
+        id: Math.floor(Math.random() * 1000000),
+        isRead: false,
+        name: 'abs',
+        message: 'lorem ipsums smfkshfk iusfhkejn skfsfkjle',
+      },
+    ],
+  });
+},
+  6000,
 );
