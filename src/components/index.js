@@ -5,6 +5,7 @@ const NotificationList = asyncComponent({ resolve: () => System.import('./notifi
 const Header = asyncComponent({ resolve: () => System.import('./header') });
 const GeoLocation = asyncComponent({ resolve: () => System.import('./geoLocation') });
 const CreateFence = asyncComponent({ resolve: () => System.import('./createFence') });
+const Calendar = asyncComponent({ resolve: () => System.import('./calendar') });
 
 export {
   Notification,
@@ -12,4 +13,5 @@ export {
   Header,
   GeoLocation,
   CreateFence,
+  Calendar,
 };

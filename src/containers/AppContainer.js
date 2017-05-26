@@ -4,6 +4,7 @@ import { fetchState } from 'react-router-server';
 
 import {
   Header,
+  Calendar,
 } from '../components';
 
 import Notification from './NotificationContainer';
@@ -34,6 +35,7 @@ class AppContainer extends Component {
           <Notification />
         </Header>
         <div className="main">
+          <Calendar />
           <GeoLocation />
           <CreateFence />
         </div>
