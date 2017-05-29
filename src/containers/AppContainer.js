@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Match } from 'react-router';
 import { fetchState } from 'react-router-server';
 
 import {
@@ -10,6 +11,9 @@ import {
 import Notification from './NotificationContainer';
 import GeoLocation from './geoLocationContainer';
 import CreateFence from './CreateFenceContainer';
+
+import { Urls } from '../helpers';
+
 
 @fetchState(
   () => ({}),
@@ -35,9 +39,9 @@ class AppContainer extends Component {
           <Notification />
         </Header>
         <div className="main">
-          <Calendar />
-          <GeoLocation />
-          <CreateFence />
+          <Match exactly pattern={Urls.base()} component={GeoLocation} />
+          <Match exactly pattern={Urls.selectDates()} component={Calendar} />
+          <Match exactly pattern={Urls.selectArea()} component={CreateFence} />
         </div>
       </div>
     );

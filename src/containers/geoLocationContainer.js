@@ -23,7 +23,6 @@ class GeoLocationContainer extends Component {
 
         axios.post('/checkLocation', { lat: latitude, lng: longitude })
           .then((response) => {
-            console.log(response);
             if (response.data.success) {
               this.setState({
                 area: response.data.areaId,
@@ -35,7 +34,6 @@ class GeoLocationContainer extends Component {
             }
           })
           .catch((error) => {
-            console.log(error);
             this.setState({
               area: 'not found due to some server error',
             });

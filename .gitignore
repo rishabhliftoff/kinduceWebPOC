@@ -1,5 +1,6 @@
 node_modules/
 build/
+react-infinite-calendar/
 
 bundle.js
 .env

@@ -8,7 +8,7 @@ class CreateFenceContainer extends Component {
     this.state = {
       error: null,
       success: null,
-    }
+    };
 
     this.setLocation = this.setLocation.bind(this);
     this.clearError = this.clearError.bind(this);
@@ -33,8 +33,6 @@ class CreateFenceContainer extends Component {
       return;
     }
 
-    console.log('dbg len: ', polygons.length);
-
     const polygon = [];
     const polygonBounds = polygons[0].getPath();
     // Iterate over the polygonBounds vertices.
@@ -44,19 +42,16 @@ class CreateFenceContainer extends Component {
         lng: xy.lng(),
       };
       polygon.push(pos);
-      console.log('dbg pos: ', pos);
     });
 
     axios.post('/setLocation', polygon)
       .then((response) => {
-        console.log(response);
         this.setState({
           error: null,
           success: `the area is set as ${response.data.areaId}`,
         });
       })
       .catch((error) => {
-        console.log(error);
         this.setState({
           error: 'area could not be set',
           success: null,
@@ -81,14 +76,12 @@ class CreateFenceContainer extends Component {
   resetLocations() {
     axios.get('/resetLocations')
       .then((response) => {
-        console.log(response);
         this.setState({
           error: null,
           success: 'all locations are resetted',
         });
       })
       .catch((error) => {
-        console.log(error);
         this.setState({
           error: 'area could not be resetted',
           success: null,

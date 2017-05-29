@@ -37,8 +37,8 @@ const getCurrentLocation = (cb) => {
     const err = 'Geolocation is not supported by this browser.';
     cb(err);
   }
-}
+};
 
 export {
   getCurrentLocation,
-}
+};

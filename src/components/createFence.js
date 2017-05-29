@@ -48,13 +48,10 @@ class CreateFence extends Component {
       });
 
       google.maps.event.addListener(drawingManager, 'polygoncomplete', (polygon) => {
-        console.log('dbg polygon added: ', polygon);
         polygons.push(polygon);
-        console.log('dbg coordinates: ', polygon);
       });
 
       this.clearMap.addEventListener('click', () => {
-        console.log('dbg on clear: ', polygons);
         polygons.forEach((p) => {
           p.setMap(null);
         });

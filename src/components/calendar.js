@@ -16,16 +16,14 @@ class MultiSelectCalendar extends Component {
           height={250}
           Component={withMultipleDates(Calendar)}
           displayOptions={{
-            showOverlay: false,
             showHeader: false,
-            shouldHeaderAnimate: false,
           }}
           min={new Date()}
           max={moment().add(6, 'M').toDate()}
           minDate={moment().add(7, 'd').toDate()}
           maxDate={moment().add(6, 'M').toDate()}
           interpolateSelection={defaultMultipleDateInterpolation}
-          selected={[]}
+          selected={[false]}
       />
     );
   }
